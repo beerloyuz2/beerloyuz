@@ -65,7 +65,7 @@ const RootCarousel = () => {
         <div className='relative w-full'>
             <Carousel responsive={responsive} customRightArrow={<CustomRightArrow />} customLeftArrow={<CustomLeftArrow />} rewind rewindWithAnimation draggable swipeable autoPlay autoPlaySpeed={4000}>
                 {images.map((image) => (
-                    <div key={image.heading} className='relative w-full h-[50vh] sm:h-[70vh] md:h-[80vh] lg:h-[85vh] xl:h-[90vh] border flex items-center justify-center pointer-events-none select-none '>
+                    <div key={image.heading} className='relative w-full h-[50vh] sm:h-[70vh] md:h-[80vh] lg:h-[85vh] xl:h-[90vh] flex items-center justify-center pointer-events-none select-none '>
                         <div className={cn("w-[60%] h-[200px] md:h-[300px] xl:h-[400px] rounded-[30px] absolute flex flex-col items-center justify-center z-50 blur-3xl", theme === "light" ? "bg-white opacity-70" : "bg-black opacity-50")}>
                         </div>
                         <div className=' flex flex-col justify-between items-center text-center p-6  gap-6 h-[200px] sm:h-[300px] md:h-[350px] w-[400px] sm:w-[500px]  md:w-[600px] rounded-2xl  z-50'>

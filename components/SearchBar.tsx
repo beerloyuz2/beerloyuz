@@ -28,7 +28,7 @@ const SearchBar = () => {
         if(query.name === undefined) return
 
         const url = qs.stringifyUrl({
-            url: "http://localhost:3000/urunlerimiz",
+            url: "/urunlerimiz",
             query
         }, { skipNull: true })
         router.push(url)
