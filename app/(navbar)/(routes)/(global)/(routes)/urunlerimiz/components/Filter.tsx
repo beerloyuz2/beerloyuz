@@ -3,12 +3,17 @@
 import { Button } from "@/components/ui/button";
 import { ScrollArea } from "@/components/ui/scroll-area";
 import { cn } from "@/libs/utils";
-import { SafeCategory, SafeModel } from "@/types"
+import { Category, Product, Model } from '@prisma/client'
+
 import { useRouter, useSearchParams } from "next/navigation";
 import qs from "query-string"
 
 interface FilterProps {
-    data: (SafeCategory | SafeModel)[] | null;
+    data: (Category & {
+        products: Product[]
+    } | Model & {
+        products: Product[]
+    })[] | null;
     name: string;
     valueKey: string;
 }

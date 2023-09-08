@@ -12,7 +12,6 @@ interface ProductProps {
     product: Product & {
         category: Category
         model: Model
-        color: Color
         images: Img[]
     }
 }
