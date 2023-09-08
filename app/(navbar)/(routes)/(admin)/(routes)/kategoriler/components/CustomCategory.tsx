@@ -6,9 +6,12 @@ import { AiOutlineClose } from 'react-icons/ai'
 import { Pencil } from 'lucide-react'
 import NewCategoriesModal from './NewCategoriesModal'
 import { Card, CardContent, CardHeader } from '@/components/ui/card'
+import { Category, Product } from '@prisma/client'
 
 interface CustomCategoryProps {
-    category: SafeCategory
+    category: Category & {
+        products: Product[]
+    }
 }
 
 
