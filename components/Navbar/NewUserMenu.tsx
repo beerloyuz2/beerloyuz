@@ -102,7 +102,7 @@ export const NewUserMenu: React.FC<UserMenuProps> = ({ currentUser, orders }) =>
                         <DropdownMenuGroup>
                             {currentUser && (
                                 <DropdownMenuItem>
-                                    <Link href="/hesabim" className="flex items-center">
+                                    <Link href="/hesabim" className="flex items-center w-full">
                                         <UserCircle className="mr-2 h-4 w-4" />
                                         <span>Hesabım</span>
                                     </Link>
@@ -110,7 +110,7 @@ export const NewUserMenu: React.FC<UserMenuProps> = ({ currentUser, orders }) =>
                             )}
 
                             <DropdownMenuItem>
-                                <Link href="/urunlerimiz" className="flex items-center">
+                                <Link href="/urunlerimiz" className="flex items-center w-full">
                                     <DoorClosed className="mr-2 h-4 w-4" />
                                     <span>Ürünlerimiz</span>
                                 </Link>
@@ -119,7 +119,7 @@ export const NewUserMenu: React.FC<UserMenuProps> = ({ currentUser, orders }) =>
                         <DropdownMenuSeparator />
                         <DropdownMenuGroup>
                             <DropdownMenuItem>
-                                <Link href="/iletisim" className="flex items-center">
+                                <Link href="/iletisim" className="flex items-center w-full">
                                     <Contact className="mr-2 h-4 w-4" />
                                     <span>İletişim</span>
                                 </Link>
@@ -133,20 +133,20 @@ export const NewUserMenu: React.FC<UserMenuProps> = ({ currentUser, orders }) =>
                                 <DropdownMenuPortal>
                                     <DropdownMenuSubContent>
                                         <DropdownMenuItem>
-                                            <Link href="/kisacabiz" className="flex items-center">
+                                            <Link href="/kisacabiz" className="flex items-center w-full">
                                                 <PlusCircle className="mr-2 h-4 w-4" />
                                                 <span>Kısaca Biz</span>
                                             </Link>
                                         </DropdownMenuItem>
                                         <DropdownMenuItem>
-                                            <Link href="/sss" className="flex items-center">
+                                            <Link href="/sss" className="flex items-center w-full">
                                                 <Mail className="mr-2 h-4 w-4" />
                                                 <span>S.S.S</span>
                                             </Link>
 
                                         </DropdownMenuItem>
                                         <DropdownMenuItem>
-                                            <Link href="/surdurulebilirlik" className="flex items-center">
+                                            <Link href="/surdurulebilirlik" className="flex items-center w-full">
                                                 <MessageSquare className="mr-2 h-4 w-4" />
                                                 <span>Sürdürülebilirlik</span>
                                             </Link>
