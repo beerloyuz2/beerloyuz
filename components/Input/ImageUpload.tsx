@@ -75,7 +75,7 @@ const ImageUpload = ({ onChange, value, currentUser, fake }: ImageUploadProps) =
                                     if (fake) return
                                     open?.()
                                 }} className=" group absolute -bottom-16 flex items-center justify-center w-32 h-32 hover:opacity-80">
-                                    <AvatarFallback className={cn(theme === "dark" && "bg-white text-secondary", theme === "light" && "bg-primary text-secondary")}>
+                                    <AvatarFallback className="dark:bg-white dark:text-secondary bg-primary text-secondary">
                                         {currentUser?.firstName[0].toUpperCase()}
 
                                     </AvatarFallback>

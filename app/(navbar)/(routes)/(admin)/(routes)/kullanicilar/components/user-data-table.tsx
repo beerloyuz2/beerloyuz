@@ -24,8 +24,6 @@ import {
 import React from "react"
 import { cn } from "@/libs"
 
-
-import { useTheme } from "next-themes"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 
@@ -43,8 +41,6 @@ export function UserDataTable<TData, TValue>({
     const [columnFilters, setColumnFilters] = React.useState<ColumnFiltersState>(
         []
     )
-
-    const { theme } = useTheme()
 
     const table = useReactTable({
         data,
@@ -66,15 +62,6 @@ export function UserDataTable<TData, TValue>({
         }
 
     }
-
-    const admin = () => {
-        if (theme === "light") {
-            return "bg-green-300 hover:bg-green-200"
-        } else {
-            return "bg-green-500 hover:bg-green-400"
-        }
-    }
-
 
     const getValue = (cell: any) => {
         if (cell.column.id === "lastName") {
@@ -127,7 +114,7 @@ export function UserDataTable<TData, TValue>({
                         {table.getRowModel().rows?.length ? (
                             table.getRowModel().rows.map((row) => (
                                 <TableRow
-                                    className={cn(" transition-colors relative", isAdmin(row) === true && admin())}
+                                    className={cn(" transition-colors relative", isAdmin(row) === true && "bg-green-300 hover:bg-green-200 dark:bg-green-500 dark:hover:bg-green-400")}
                                     key={row.id}
                                     data-state={row.getIsSelected() && "selected"}
                                 >

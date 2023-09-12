@@ -1,10 +1,9 @@
 "use client"
 
-import { Category, Color, Model } from '@prisma/client';
+
 import RootCarousel from "./RootCarousel"
-import { SafeProduct } from "@/types"
 import Marquee from 'react-fast-marquee';
-import { sss, testimonials } from '@/constants';
+import { homepage, sss, testimonials } from '@/constants';
 import Testimonial from './Testimonial';
 import { useEffect, useState } from 'react';
 import { Collapsible, CollapsibleContent, CollapsibleTrigger } from '@/components/ui/collapsible';
@@ -15,6 +14,7 @@ import { useRouter } from 'next/navigation';
 import Image from 'next/image';
 import { Separator } from '@/components/ui/separator';
 import HomeModal from '@/components/Modals/HomeModal';
+import { cn } from "@/libs";
 
 
 
@@ -46,29 +46,16 @@ export const RootPageClient = () => {
         <div className=" pt-[100px] w-full flex flex-col justify-center items-center gap-5">
           <RootCarousel />
           <div className=" w-full flex flex-col md:grid grid-cols-3 my-5  ">
-            <div className=" p-5 relative min-h-[300px]  border-primary md:border-r-[1px] md:border-b-0 border-b-[1px] flex flex-col items-start gap-3 justify-center ">
-              <div className=' font-extralight text-xl md:text-2xl  absolute top-6 left-5 tracking-wider'>
-                ... YIL GARANTİ
+            {homepage.map((item, i) => (
+              <div key={item.heading} className={cn(" p-5 relative min-h-[300px] flex flex-col items-start gap-3 justify-center", i === 1 && "border-primary md:border-x-[1px] bg-secondary md:border-t-0 md:border-b-0 border-b-[1px] border-t-[1px]")}>
+                <div className=' font-extralight text-xl md:text-2xl absolute top-6 left-5 tracking-wider'>
+                  {item.heading}
+                </div>
+                <p className=' text-muted-foreground text-sm'>
+                  {item.message}
+                </p>
               </div>
-              <p className=' text-muted-foreground text-sm'>
-                Beerloyuz, üretimden teslimata kadar titizlikle denetlenen üretimiyle öne çıkar. Her Beerloyuz kapağının arkasında, üretim tarihini ve Beerloyuz logosunu içeren lazerle işlenmiş işaretler bulunur. Üretim tarihinden itibaren kapaklarımız, sararma, solma ve aşınmalara karşı ... yıl garantilidir.
-              </p>
-            </div>
-            <div className=" p-5 relative min-h-[300px] bg-secondary flex flex-col items-start gap-3 justify-center">
-              <div className=' font-extralight text-xl md:text-2xl absolute top-6 left-5 tracking-wider'>
-                ... İŞ GÜNÜNDE TESLİM
-              </div>
-              <p className=' text-muted-foreground text-sm'>
-
-                Beerloyuz, günlük ...  üretim kapasitesiyle, sipariş tarihinden itibaren sadece ... iş günü içinde üretim yapar ve teslimatı uygun şekilde paketler. Siz siparişinizi verin, biz hızla teslim edelim.            </p>
-            </div>
-            <div className=" p-5 relative min-h-[300px] border-primary md:border-l-[1px] md:border-t-0 md:border-b-0 border-b-[1px] border-t-[1px] flex flex-col items-start gap-3 justify-center">
-              <div className=' font-extralight text-xl md:text-2xl absolute top-6 left-5 tracking-wider'>
-                ... YILIN GETİRDİĞİ TECRÜBE
-              </div>
-              <p className=' text-muted-foreground text-sm'>
-                Beerloyuz, kuruluşundan bu yana sürekli gelişmeyi hedefleyen bir yolculuğa çıktı. Mobilya Kapakları üretimindeki .... yılımızı kutlarken, Türkiyenin önde gelen markalarından biri olmanın haklı gururunu yaşıyoruz.</p>
-            </div>
+            ))}
           </div>
           <div className=' w-full flex flex-col gap-y-8'>
             <div className='w-full flex flex-col md:grid md:grid-cols-2'>

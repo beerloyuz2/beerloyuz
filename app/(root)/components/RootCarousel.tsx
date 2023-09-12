@@ -3,10 +3,8 @@
 
 import 'react-multi-carousel/lib/styles.css';
 import Image from 'next/image';
-import { useTheme } from "next-themes"
 import { Button } from '@/components/ui/button';
 import Carousel, { ArrowProps } from 'react-multi-carousel';
-import { cn } from '@/libs';
 import { images } from '@/constants';
 import { useRouter } from 'next/navigation';
 import { ArrowLeft, ArrowRight } from 'lucide-react';
@@ -15,7 +13,6 @@ import { ArrowLeft, ArrowRight } from 'lucide-react';
 
 const RootCarousel = () => {
 
-    const { theme } = useTheme()
     const router = useRouter()
 
     const responsive = {
@@ -63,10 +60,10 @@ const RootCarousel = () => {
 
     return (
         <div className='relative w-full'>
-            <Carousel responsive={responsive} customRightArrow={<CustomRightArrow />} customLeftArrow={<CustomLeftArrow />} rewind rewindWithAnimation draggable swipeable autoPlay autoPlaySpeed={4000}>
+            <Carousel responsive={responsive} ssr customRightArrow={<CustomRightArrow />} customLeftArrow={<CustomLeftArrow />} rewind rewindWithAnimation draggable swipeable autoPlay autoPlaySpeed={4000}>
                 {images.map((image) => (
                     <div key={image.heading} className='relative w-full h-[50vh] sm:h-[70vh] md:h-[80vh] lg:h-[85vh] xl:h-[90vh] flex items-center justify-center pointer-events-none select-none '>
-                        <div className={cn("w-[60%] h-[200px] md:h-[300px] xl:h-[400px] rounded-[30px] absolute flex flex-col items-center justify-center z-50 blur-3xl", theme === "light" ? "bg-white opacity-70" : "bg-black opacity-50")}>
+                        <div className="w-[60%] h-[200px] md:h-[300px] xl:h-[400px] rounded-[30px] absolute flex flex-col items-center justify-center z-50 blur-3xl bg-white opacity-70 dark:bg-black dark:opacity-50">
                         </div>
                         <div className=' flex flex-col justify-between items-center text-center p-6  gap-6 h-[200px] sm:h-[300px] md:h-[350px] w-[400px] sm:w-[500px]  md:w-[600px] rounded-2xl  z-50'>
                             <h2 className=' text-2xl sm:text-3xl md:text-5xl tracking-wider'>{image.heading} </h2>

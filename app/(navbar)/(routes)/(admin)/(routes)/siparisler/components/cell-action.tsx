@@ -54,7 +54,7 @@ export const CellAction: React.FC<CellActionProps> = ({ data }) => {
                 </ContextMenuTrigger>
                 <ContextMenuContent className="w-64">
                     <ContextMenuItem inset disabled={data.confirmed} onClick={() => setIsUpdateOpen(true)}>
-                        Güncelle
+                        Güncelle {data.confirmed && "(Onaylandı)"}
                     </ContextMenuItem>
                     <ContextMenuItem inset onClick={() => setIsDeleteOpen(true)}>
                         {data.confirmed ? "Kaldır" : "İptal et"}

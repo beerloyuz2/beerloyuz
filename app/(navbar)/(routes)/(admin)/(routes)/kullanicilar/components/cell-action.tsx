@@ -3,13 +3,11 @@
 import { Order, User } from "@prisma/client"
 
 
-import { useEffect, useState } from "react"
+import { useState } from "react"
 
-import { ContextMenu, ContextMenuContent, ContextMenuItem, ContextMenuLabel, ContextMenuSeparator, ContextMenuTrigger } from "@/components/ui/context-menu"
+import { ContextMenu, ContextMenuContent, ContextMenuItem, ContextMenuTrigger } from "@/components/ui/context-menu"
 
 import axios from "axios"
-import { PulseLoader } from "react-spinners"
-import { useTheme } from "next-themes"
 import { useRouter } from "next/navigation"
 import { useToast } from "@/components/ui/use-toast"
 

@@ -4,9 +4,6 @@ import { useEffect, useState } from "react"
 import { SafeCategory } from "@/types"
 import { ContextMenu, ContextMenuContent, ContextMenuItem, ContextMenuLabel, ContextMenuSeparator, ContextMenuTrigger } from "@/components/ui/context-menu"
 import NewCategoriesModal from "./NewCategoriesModal"
-import axios from "axios"
-import { PulseLoader } from "react-spinners"
-import { useTheme } from "next-themes"
 import { useRouter } from "next/navigation"
 import { Category, Product } from "@prisma/client"
 
@@ -20,7 +17,6 @@ interface CellActionProps {
 
 export const CellAction: React.FC<CellActionProps> = ({ data }) => {
 
-    const { theme } = useTheme()
     const router = useRouter()
     const [isUpdateOpen, setIsUpdateOpen] = useState(false)
     const [isDeleteOpen, setIsDeleteOpen] = useState(false)

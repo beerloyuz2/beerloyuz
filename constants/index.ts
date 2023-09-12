@@ -87,6 +87,21 @@ export const images = [
  
 ];
 
+export const homepage = [
+    {
+        heading: "... YIL GARANTİ",
+        message: "Beerloyuz, üretimden teslimata kadar titizlikle denetlenen üretimiyle öne çıkar. Her Beerloyuz kapağının arkasında, üretim tarihini ve Beerloyuz logosunu içeren lazerle işlenmiş işaretler bulunur. Üretim tarihinden itibaren kapaklarımız, sararma, solma ve aşınmalara karşı ... yıl garantilidir."
+    },
+    {
+        heading: "... İŞ GÜNÜNDE TESLİM",
+        message: "Beerloyuz, günlük ...  üretim kapasitesiyle, sipariş tarihinden itibaren sadece ... iş günü içinde üretim yapar ve teslimatı uygun şekilde paketler. Siz siparişinizi verin, biz hızla teslim edelim."
+    },
+    {
+        heading: "... YILIN GETİRDİĞİ TECRÜBE",
+        message: "Beerloyuz, kuruluşundan bu yana sürekli gelişmeyi hedefleyen bir yolculuğa çıktı. Mobilya Kapakları üretimindeki .... yılımızı kutlarken, Türkiyenin önde gelen markalarından biri olmanın haklı gururunu yaşıyoruz."
+    }
+]
+
 export const sss = [
     {
         q: "Hangi tür mobilyaları sunuyorsunuz?",

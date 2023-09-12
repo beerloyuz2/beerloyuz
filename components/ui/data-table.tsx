@@ -25,7 +25,6 @@ import React from "react"
 import { cn, dateFormatter } from "@/libs"
 import { Popover, PopoverContent, PopoverTrigger } from "./popover"
 import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "./tooltip"
-import { useTheme } from "next-themes"
 
 interface DataTableProps<TData, TValue> {
     columns: ColumnDef<TData, TValue>[]
@@ -41,8 +40,6 @@ export function DataTable<TData, TValue>({
     const [columnFilters, setColumnFilters] = React.useState<ColumnFiltersState>(
         []
     )
-
-    const { theme } = useTheme()
 
     const table = useReactTable({
         data,
@@ -111,21 +108,6 @@ export function DataTable<TData, TValue>({
         }
     }
 
-    const themeConfirmed = () => {
-        if (theme === "light") {
-            return "bg-green-300 hover:bg-green-200"
-        } else {
-            return "bg-green-500 hover:bg-green-400"
-        }
-    }
-    const themeNotConfirmed = () => {
-        if (theme === "light") {
-            return "bg-red-300 hover:bg-red-200"
-        } else {
-            return "bg-red-500 hover:bg-red-400"
-        }
-    }
-
     return (
         <div>
             <div className="flex items-center py-4">
@@ -162,7 +144,7 @@ export function DataTable<TData, TValue>({
                         {table.getRowModel().rows?.length ? (
                             table.getRowModel().rows.map((row) => (
                                 <TableRow
-                                    className={cn(" transition-colors relative", isConfirmed(row) === true ? themeConfirmed() : themeNotConfirmed())}
+                                    className={cn(" transition-colors relative", isConfirmed(row) === true ? "bg-green-300 hover:bg-green-200 dark:bg-green-500 dark:hover:bg-green-400" : "bg-red-300 hover:bg-red-200 dark:bg-red-500 dark:hover:bg-red-400")}
                                     key={row.id}
                                     data-state={row.getIsSelected() && "selected"}
                                 >

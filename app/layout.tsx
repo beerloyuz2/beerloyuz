@@ -19,7 +19,7 @@ export default async function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <body className={nunitosans.className}>
-        <ThemeProvider attribute='class' defaultTheme="system" enableSystem>
+        <ThemeProvider  attribute='class' defaultTheme="dark" enableSystem={false} storageKey='beerloyuz-cut'>
           <AuthProvider>
             <Toaster />
             {children}

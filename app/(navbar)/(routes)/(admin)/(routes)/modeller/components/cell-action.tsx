@@ -1,12 +1,7 @@
 "use client"
 
-import { useEffect, useState } from "react"
-import { SafeModel } from "@/types"
+import { useState } from "react"
 import { ContextMenu, ContextMenuContent, ContextMenuItem, ContextMenuLabel, ContextMenuSeparator, ContextMenuTrigger } from "@/components/ui/context-menu"
-
-import axios from "axios"
-import { PulseLoader } from "react-spinners"
-import { useTheme } from "next-themes"
 import { useRouter } from "next/navigation"
 import NewModelsModal from "./NewModelsModal"
 import { Model, Product } from "@prisma/client"
@@ -21,7 +16,6 @@ interface CellActionProps {
 
 export const CellAction: React.FC<CellActionProps> = ({ data }) => {
 
-    const { theme } = useTheme()
     const router = useRouter()
     const [isUpdateOpen, setIsUpdateOpen] = useState(false)
     const [isDeleteOpen, setIsDeleteOpen] = useState(false)
