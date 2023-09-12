@@ -46,6 +46,7 @@ const NewProductsModal = ({ isOpen, onClose, product }: ProductsModalProps) => {
                 title: "Ürün başarıyla silindi!"
             })
             router.push("/urunler")
+            router.refresh()
             onClose()
         }).catch(() => {
             toast({
