@@ -24,6 +24,13 @@ const Page = async ({ params }: { params: { productId: string } }) => {
             <Unauthorized />
         )
     }
+    if (!product) {
+        return (
+            <div className="w-full h-screen flex items-center justify-center">
+                <span className="font-light">Böyle bir ürün bulunmamaktadır.</span>
+            </div>
+        )
+    }
 
     return (
         <ProductForm
