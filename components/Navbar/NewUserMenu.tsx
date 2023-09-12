@@ -67,7 +67,7 @@ export const NewUserMenu: React.FC<UserMenuProps> = ({ currentUser, orders }) =>
                 <div className="xl:hidden">
                     <Link href="/siparislerim" className=" cursor-pointer relative flex items-center justify-center ">
                         <TooltipProvider>
-                            <Tooltip>
+                            <Tooltip delayDuration={50}>
                                 <TooltipTrigger>
                                     <AiOutlineShoppingCart className=" w-[23px] h-[23px] sm:w-[30px] sm:h-[30px]" />
                                     {orders?.length! > 0 && (

@@ -64,7 +64,7 @@ export function AdminTable<TData, TValue>({
                 <Button variant="secondary" className="relative z-10">
                     <Popover>
                         <TooltipProvider>
-                            <Tooltip>
+                            <Tooltip delayDuration={50}>
                                 <TooltipTrigger>
                                     <PopoverTrigger>
                                         {trimmedValue}

@@ -87,7 +87,7 @@ export const AdminMenu = () => {
                 </NavigationMenuItem>
                 <NavigationMenuItem>
                     <TooltipProvider>
-                        <Tooltip>
+                        <Tooltip delayDuration={50}>
                             <TooltipTrigger>
                                 <Link href="/siparislerim" className='cursor-pointer px-2 border' legacyBehavior passHref>
                                     <NavigationMenuLink>

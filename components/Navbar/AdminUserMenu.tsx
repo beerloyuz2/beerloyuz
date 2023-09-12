@@ -61,7 +61,7 @@ export const AdminUserMenu = ({ currentUser }: AdminUserMenuProps) => {
                 <ModeToggle />
                 <div className="flex items-center  xl:hidden">
                     <TooltipProvider>
-                        <Tooltip>
+                        <Tooltip delayDuration={50}>
                             <TooltipTrigger>
                                 <Link href="/siparislerim">
                                     <AiFillShopping className=" cursor-pointer text-red-500" size={30} />

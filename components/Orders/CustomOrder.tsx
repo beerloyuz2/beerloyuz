@@ -90,7 +90,7 @@ const CustomOrder: React.FC<CustomOrderProps> = ({ order, currentUser }) => {
                                     <p> <span className=' font-semibold'>Taleplerim:</span> {order?.other?.length! > 10 ? (<Button variant="secondary" className="text-[10px] md:text-xs lg:text-bas" size="sm2">
                                         <Popover>
                                             <TooltipProvider>
-                                                <Tooltip>
+                                                <Tooltip delayDuration={50}>
                                                     <TooltipTrigger>
                                                         <PopoverTrigger>
                                                             {order?.other?.substring(0, 6) + "..."}

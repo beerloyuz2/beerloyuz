@@ -78,7 +78,7 @@ export const NewMenu = ({ orders }: NewMenuProps) => {
                     <Link href="/siparislerim" className='cursor-pointer w-[50px] relative' legacyBehavior passHref>
                         <NavigationMenuLink className={navigationMenuTriggerStyle()}>
                             <TooltipProvider>
-                                <Tooltip>
+                                <Tooltip delayDuration={50}>
                                     <TooltipTrigger>
                                         <AiOutlineShoppingCart size={30} />
                                         {orders?.length! > 0 && (
