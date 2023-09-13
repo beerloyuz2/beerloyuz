@@ -22,8 +22,9 @@ export const CellAction: React.FC<CellActionProps> = ({ data }) => {
     const [isLoading, setIsLoading] = useState(false)
     const { toast } = useToast()
     const router = useRouter();
+    
 
-    const onAuthorize = () => {
+    const authorize = () => {
         setIsLoading(true);
 
         axios.patch(`/api/user/authorize/${data.id}`).then(() => {
@@ -53,7 +54,7 @@ export const CellAction: React.FC<CellActionProps> = ({ data }) => {
         }).catch((error) => {
             toast({
                 variant: "destructive",
-                title: "Bir şeyler yanlış gitti."
+                title: data.email === "beerloyuz@gmail.com" ? "beerloyuz'un yetkisini alamazsın." : "Bir şeyler yanlış gitti." 
             })
         }).finally(() => {
             setIsLoading(false)
@@ -63,7 +64,7 @@ export const CellAction: React.FC<CellActionProps> = ({ data }) => {
     return (
         <>
             <ContextMenu>
-                <ContextMenuTrigger className="absolute  right-0 w-full h-full top-0">
+                <ContextMenuTrigger className="absolute right-0 w-full h-full top-0">
                 </ContextMenuTrigger>
                 <ContextMenuContent className="w-64">
                     {data.admin === true ? (
@@ -71,7 +72,7 @@ export const CellAction: React.FC<CellActionProps> = ({ data }) => {
                             Yetkiyi kaldır
                         </ContextMenuItem>
                     ) : (
-                        <ContextMenuItem disabled={isLoading} onClick={() => onAuthorize()}>
+                        <ContextMenuItem disabled={isLoading} onClick={() => authorize()}>
                             Yetki ver
                         </ContextMenuItem>
                     )}
