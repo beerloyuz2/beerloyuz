@@ -1,16 +1,15 @@
 "use client"
 
 import { Button } from "@/components/ui/button"
-import { Form, FormControl, FormDescription, FormField, FormItem, FormLabel, FormMessage } from "@/components/ui/form"
+import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from "@/components/ui/form"
 import { Input } from "@/components/ui/input"
-import { Select } from "@/components/ui/select"
 import { useToast } from "@/components/ui/use-toast"
 import { User } from "@prisma/client"
 import axios from "axios"
 import * as z from "zod"
 import { useTheme } from "next-themes"
 import { useRouter } from "next/navigation"
-import { useEffect, useState } from "react"
+import {  useState } from "react"
 import { useForm } from "react-hook-form"
 import { zodResolver } from "@hookform/resolvers/zod"
 import { PulseLoader } from "react-spinners"
@@ -109,9 +108,6 @@ const ProfilePageClient = ({ currentUser }: ProfilePageClientProps) => {
 
     }
 
-    useEffect(() => {
-        if (!currentUser) return router.push("/girisyap")
-    }, [currentUser, router])
 
 
     return (
