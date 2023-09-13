@@ -3,6 +3,10 @@ import prisma from "@/libs/prismadb"
 export default async function getProductById(id: string) {
     try {
 
+        if (id.length !== 24) {
+            return null
+        }
+
         const product = await prisma.product.findUnique({
             where: {
                 id
@@ -14,6 +18,7 @@ export default async function getProductById(id: string) {
             }
         })
 
+        
         if (!product) {
             return null
         }
